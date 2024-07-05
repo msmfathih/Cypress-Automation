@@ -1,0 +1,11 @@
+{
+  "name": "Using fixtures to represent data",
+  "email": "hello@cypress.io",
+  "body": "Fixtures are a great way to mock data for responses to routes"
+}
+
+
+{
+  "product_name": "macbook pro m3",
+  "Visit_url": "https://www.amazon.ae/ref=nav_logo"
+}

@@ -1,0 +1,17 @@
+{
+    "productdata": [
+    {"product_name": "macbook pro m3"},
+    {"Visit_url": "https://www.amazon.ae/ref=nav_logo"}
+
+    ]
+  }
+
+
+
+
+  {
+    "users": [
+      { "username": "user1", "password": "password1" },
+      { "username": "user2", "password": "password2" }
+    ]
+  }
