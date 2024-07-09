@@ -1,0 +1,29 @@
+Install Cypress Automation Tool
+
+1.	Download NodeJS and install
+2.	Set the system variable  C:\Program Files\nodejs
+3.	Install VSCode
+	
+Run the below commands on terminal in VS code
+4.	mkdir my-cypress-project 
+5.	cd my-cypress-project 
+6.	npm init -y 
+7.	npm install cypress --save-dev  
+8.	npx cypress open    
+9.	npm update cypress --save-dev     #to install latest version
+10.	npx cypress run –headless   or npx cypress run --headless --browser chrome
+
+
+npm install cypress@latest   //update latest cypress version
+
+npx cypress run --parallel --record
+
+
+New GIT project set up
+git init
+git add ./
+git commit -m "new project"
+git remote add origin "paste the url from git"
+git push --set-upstream origin master
+git push 
+

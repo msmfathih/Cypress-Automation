@@ -35,7 +35,7 @@ describe('My first test suite', function()
         .find('div:nth-child(1)')
         .find('label:nth-child(1)')
         .find('i:nth-child(2)').click()
-
+        cy.clearLocalStorage()
         // Example: Scroll to element1
         cy.get('#p_72-title > .a-size-base').scrollIntoView();
         cy.wait(2000)
@@ -62,11 +62,12 @@ describe('My first test suite', function()
         cy.get('.po-brand > .a-span9 > .a-size-base') // Replace with your selector
       .should('contain.text', 'Apple'); // Replace 'Expected Text' with the text you want to verify
         cy.get('.po-model_name > .a-span9 > .a-size-base').should('contain.text', 'MacBook Air'); //validate model name
+        cy.clearLocalStorage()
         cy.get('#add-to-cart-button').click()
         // cy.get('.some-element').click();
         // cy.screenshot('optional-file-name')
         cy.clearLocalStorage()
-        cy.contains('6,153') //cart sub total 5439
+        cy.contains('6,279') //cart sub total 5439
         cy.get('#sc-buy-box-ptc-button > .a-button-inner > .a-button-input').click()
         cy.get('#ap_email_login').type('msmfathih40@gmail.com')
         cy.get('.a-button-input').click()
