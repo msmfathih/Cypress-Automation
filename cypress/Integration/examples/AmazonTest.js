@@ -3,14 +3,23 @@
 //describe is a test suite it have 2 arguments 1.description and 2.function, under function IT block comes under IT 
 //Test case should come
 
-describe('My first test suite', function()   
+describe('My first test suite', function() 
+
 {
+
+  before(function(){
+    cy.fixture('AmazonData').then(function(data){    
+        this.data=data  
+    })
+
+})
+
     it('My first Test case', function(){
 
-        cy.visit("https://www.amazon.ae/ref=nav_logo")
+        cy.visit(this.data.amazonurl)
         cy.clearCookies()
         cy.title().should('include', 'Amazon.ae: Shop Online in UAE - Low Prices on Electronics, Fashion, Mobiles, Grocery & more');
-        cy.get('#twotabsearchtextbox').type('macbook pro m3')
+        cy.get('#twotabsearchtextbox').type(this.data.productname)
         cy.wait(2000)
         cy.get(':nth-child(1) > .s-suggestion-container > .s-suggestion').click()  
         cy.wait(2000)
@@ -67,11 +76,11 @@ describe('My first test suite', function()
         // cy.get('.some-element').click();
         // cy.screenshot('optional-file-name')
         cy.clearLocalStorage()
-        cy.contains('6,279') //cart sub total 5439
+        cy.contains(this.data.cart_sub_total) //cart sub total 5439
         cy.get('#sc-buy-box-ptc-button > .a-button-inner > .a-button-input').click()
-        cy.get('#ap_email_login').type('msmfathih40@gmail.com')
+        cy.get('#ap_email_login').type(this.data.email)
         cy.get('.a-button-input').click()
-        cy.get('#ap_password').type('fathihewrt')
+        cy.get('#ap_password').type(this.data.password)
         cy.get('#signInSubmit').click()
         cy.wait(2000)
         cy.contains('Your password is incorrect')
