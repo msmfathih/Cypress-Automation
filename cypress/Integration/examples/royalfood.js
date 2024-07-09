@@ -4,7 +4,7 @@ describe('This is my first test suite', function()
 //for data driven test create fixture under before method
     before(function(){
         cy.fixture('example').then(function(data){
-            //this keyword is refers to whole class this.data means veriable is iniatialised 
+            //this key word is refers to whole class this.data means veriable is iniatialised 
             this.data=data  //this.data(global veriable)  taking data(2) from local veriable data 
         })
 

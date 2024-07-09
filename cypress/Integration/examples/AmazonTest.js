@@ -83,7 +83,7 @@ describe('My first test suite', function()
         cy.get('#ap_password').type(this.data.password)
         cy.get('#signInSubmit').click()
         cy.wait(2000)
-        cy.contains('Your password is incorrect')
+        cy.contains(this.data.Validation_message)
 
 
        
