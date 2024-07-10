@@ -10,8 +10,9 @@ module.exports = defineConfig({
     // viewportWidth:1200
     //defaultCommandTimeout: 30000
     "screenshotsFolder": "cypress/screenshots",
-     "defaultCommandTimeout": 10000 // Adjust timeout as needed   
-     
+     "defaultCommandTimeout": 10000, // Adjust timeout as needed   
+     "numTestsKeptInMemory": 10  
+     // 0 you will not get any DOM snapshots. The memory usage will still climb, but it will climb at a much slower rate.
     
     
   },

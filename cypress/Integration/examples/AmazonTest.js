@@ -6,12 +6,10 @@
 describe('My first test suite', function() 
 
 {
-
   before(function(){
     cy.fixture('AmazonData').then(function(data){    
         this.data=data  
     })
-
 })
 
     it('My first Test case', function(){
@@ -83,16 +81,22 @@ describe('My first test suite', function()
         cy.get('#ap_password').type(this.data.password)
         cy.get('#signInSubmit').click()
         cy.wait(2000)
-        cy.contains(this.data.Validation_message)
-
+        cy.get('.a-list-item').then($element => {
+          if ($element.is(':visible')) {
+            // Element is visible
+            // Perform actions
+            cy.log('Element is visible');
+          } else {
+            // Element is not visible
+            // Handle the case when element is not visible
+            cy.log('Element is not visible');
+          }
+        });
+        //cy.contains(this.data.Validation_message)
+        cy.contains(this.data.Validation_message).should('be.visible');
 
        
     })
-
-    // it('should verify the product price', () => {
-    //     // Assert the product price
-    //     cy.get('.a-section.aok-relative > .a-price > [aria-hidden="true"] > .a-price-whole').should('have.text', '4289')  // Replace '10' with the expected price value
-    //   })
 
   }
 )
