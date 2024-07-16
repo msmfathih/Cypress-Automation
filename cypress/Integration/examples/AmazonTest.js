@@ -45,8 +45,7 @@ describe('My first test suite', function()
         cy.clearLocalStorage()
         // Example: Scroll to element1
         cy.get('#p_72-title > .a-size-base').scrollIntoView();
-        cy.wait(2000)
-    
+        cy.wait(3000)
         //selecting product and go inside it
         cy.get('[data-asin="B0CX23YFGS"]')
         .find('.sg-col-inner')
